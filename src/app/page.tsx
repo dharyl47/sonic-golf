@@ -12,12 +12,12 @@ export default function Home() {
         >
           Go to Player Scorecard
         </a>
-        <a
+        {/* <a
           href="/leaderboard"
           className="bg-gray-200 px-6 py-3 rounded hover:bg-gray-300 transition"
         >
           View Leaderboard
-        </a>
+        </a> */}
       </div>
     </main>
   );
