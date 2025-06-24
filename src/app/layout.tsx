@@ -8,6 +8,10 @@ export const metadata = {
   themeColor: '#008000',
 };
 
+import { Barlow_Condensed } from 'next/font/google'
+
+const barlowCondensed = Barlow_Condensed({ subsets: ['latin'], weight: ['400', '700'] })
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -16,7 +20,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/icons/icon-192x192.png" />
         <meta name="theme-color" content="#008000" />
       </head>
-      <body>{children}</body>
+      <body className={barlowCondensed.className}>
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,24 +1,31 @@
-// src/app/page.tsx
+"use client";
+
+import Header from "../components/Header";
+import Greeting from "../components/Greeting";
+import Carousel from "../components/Carousel";
+import PrimaryButton from "../components/PrimaryButton";
+
+const banners = [
+  "/home_banner_1.jpg",
+  "/home_banner_2.jpg",
+  "/home_banner_3.jpg",
+];
 
 export default function Home() {
   return (
-    <main className="max-w-xl mx-auto p-8 text-center">
-      <h1 className="text-4xl font-bold text-green-700 mb-4">🏌️‍♂️ Sonic Golf</h1>
-      <p className="text-lg mb-6">Your live golf event scoring web app.</p>
-      <div className="flex flex-col gap-4 items-center">
-        <a
-          href="/player/scorecard"
-          className="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800 transition"
-        >
-          Go to Player Scorecard
-        </a>
-        {/* <a
-          href="/leaderboard"
-          className="bg-gray-200 px-6 py-3 rounded hover:bg-gray-300 transition"
-        >
-          View Leaderboard
-        </a> */}
-      </div>
+    <main
+      className="w-full max-w-none px-0 py-4 min-h-screen overflow-hidden"
+      style={{ backgroundColor: "#E4DFD3" }}
+    >
+      {/* ✅ Header */}
+      <Header />
+
+      {/* ✅ Greeting */}
+      <Greeting />
+
+      {/* ✅ Carousel */}
+      <Carousel banners={banners} />
+      <PrimaryButton href="/player/matches" label="View Matches" />
     </main>
   );
 }
