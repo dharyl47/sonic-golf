@@ -1,4 +1,5 @@
 import EventBanner from "../../../components/EventBanner";
+import Header from "../../../components/Header";
 import ScoreCard from "../../../components/ScoreCard";
 
 export default function PlayerScorecardPage() {
@@ -9,6 +10,7 @@ export default function PlayerScorecardPage() {
 
   return (
     <div className="flex flex-col items-center">
+      <Header transparent />
       <EventBanner />
       <main className="container">
         <ScoreCard holes={holes} />

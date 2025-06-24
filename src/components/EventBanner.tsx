@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Header from "./Header"; // Make sure the path matches your project structure!
 
 export default function EventBanner() {
   return (
@@ -16,9 +15,8 @@ export default function EventBanner() {
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
-      
+
       {/* Transparent header */}
-      <Header transparent />
 
       {/* Banner Text */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white z-10">
