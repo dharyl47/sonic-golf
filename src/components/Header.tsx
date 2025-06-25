@@ -115,7 +115,13 @@ export default function Header({ transparent = false }: HeaderProps) {
               Settings
             </button>
           </Link>
-          <button className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100">
+          <button
+            onClick={() => {
+              sessionStorage.removeItem("isLoggedIn");
+              window.location.href = "/login";
+            }}
+            className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100"
+          >
             Logout
           </button>
         </div>

@@ -1,5 +1,6 @@
-// app/layout.tsx
 import './globals.css';
+import { Barlow_Condensed } from 'next/font/google';
+import AuthGuard from '../components/AuthGuard'; 
 
 export const metadata = {
   title: 'Sonic Golf',
@@ -8,9 +9,7 @@ export const metadata = {
   themeColor: '#008000',
 };
 
-import { Barlow_Condensed } from 'next/font/google'
-
-const barlowCondensed = Barlow_Condensed({ subsets: ['latin'], weight: ['400', '700'] })
+const barlowCondensed = Barlow_Condensed({ subsets: ['latin'], weight: ['400', '700'] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -21,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#008000" />
       </head>
       <body className={barlowCondensed.className}>
-        {children}
+        <AuthGuard>{children}</AuthGuard>
       </body>
     </html>
   );
