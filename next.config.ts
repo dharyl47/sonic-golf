@@ -1,7 +1,26 @@
 // next.config.ts
 import withPWA from 'next-pwa';
 import type { NextConfig } from 'next';
-import runtimeCaching from 'next-pwa/cache'; // ✅ built-in defaults
+import runtimeCaching from 'next-pwa/cache';
+
+const customRuntimeCaching = [
+  ...runtimeCaching,
+  {
+    urlPattern: /^\/$/, // cache the root document
+    handler: 'NetworkFirst',
+    options: {
+      cacheName: 'start-url',
+      expiration: {
+        maxEntries: 1,
+        maxAgeSeconds: 24 * 60 * 60, // 24 hours
+      },
+      networkTimeoutSeconds: 3,
+      cacheableResponse: {
+        statuses: [0, 200],
+      },
+    },
+  },
+];
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -20,5 +39,5 @@ export default withPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,
-  runtimeCaching, // ✅ use next-pwa's default smart caching
+  runtimeCaching: customRuntimeCaching,
 })(nextConfig);

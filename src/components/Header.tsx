@@ -48,7 +48,9 @@ export default function Header({ transparent = false }: HeaderProps) {
 
       {/* Hamburger Menu */}
       {menuOpen && (
-        <div className={`absolute top-14 left-4 bg-white shadow-xl rounded-lg w-48 p-4 z-50 text-black`}>
+        <div
+          className={`absolute top-14 left-4 bg-white shadow-xl rounded-lg w-48 p-4 z-50 text-black`}
+        >
           <Link
             href="/"
             className={`block px-4 py-2 rounded ${
@@ -60,7 +62,9 @@ export default function Header({ transparent = false }: HeaderProps) {
           <Link
             href="/matches"
             className={`block px-4 py-2 rounded ${
-              pathname === "/matches" ? "bg-green-700 text-white" : "hover:bg-gray-100"
+              pathname === "/matches"
+                ? "bg-green-700 text-white"
+                : "hover:bg-gray-100"
             }`}
           >
             Matches
@@ -78,21 +82,32 @@ export default function Header({ transparent = false }: HeaderProps) {
           <button className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100">
             About Us
           </button>
-          <button className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100">
+          <Link
+            href="/contact"
+            className={`block px-4 py-2 rounded ${
+              pathname === "/contact"
+                ? "bg-green-700 text-white"
+                : "hover:bg-gray-100"
+            }`}
+          >
             Contact Us
-          </button>
+          </Link>
         </div>
       )}
 
       {/* Profile Dropdown */}
       {profileOpen && (
         <div className="absolute top-14 right-4 bg-white shadow-xl rounded-lg w-40 p-4 z-50 text-black">
-          <button className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100">
-            View Profile
-          </button>
-          <button className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100">
-            Settings
-          </button>
+          <Link href="/player/profile">
+            <button className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100">
+              View Profile
+            </button>
+          </Link>
+          <Link href="/player/settings">
+            <button className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100">
+              Settings
+            </button>
+          </Link>
           <button className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100">
             Logout
           </button>
