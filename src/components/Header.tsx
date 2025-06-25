@@ -20,7 +20,7 @@ export default function Header({ transparent = false }: HeaderProps) {
         transparent
           ? "absolute top-0 left-0 right-0 z-50 text-white"
           : "relative mb-6"
-      } px-4`}
+      } px-4 mt-2`}
     >
       <div className="flex items-center justify-between">
         {/* Hamburger */}
