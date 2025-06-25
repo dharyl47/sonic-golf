@@ -60,7 +60,7 @@ export default function Header({ transparent = false }: HeaderProps) {
             Homepage
           </Link>
           <Link
-            href="/matches"
+            href="/player/matches"
             className={`block px-4 py-2 rounded ${
               pathname === "/matches"
                 ? "bg-green-700 text-white"
@@ -79,9 +79,16 @@ export default function Header({ transparent = false }: HeaderProps) {
           >
             View Scorecard
           </Link>
-          <button className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100">
+          <Link
+            href="/about"
+            className={`block px-4 py-2 rounded ${
+              pathname === "/about"
+                ? "bg-green-700 text-white"
+                : "hover:bg-gray-100"
+            }`}
+          >
             About Us
-          </button>
+          </Link>
           <Link
             href="/contact"
             className={`block px-4 py-2 rounded ${
