@@ -55,7 +55,7 @@ export default function Carousel({ banners }: CarouselProps) {
       </h2>
 
       <div
-        className="relative w-full h-[320px] mt-8 mb-10"
+        className="relative w-full h-[380px] mt-9 mb-10"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -103,7 +103,7 @@ export default function Carousel({ banners }: CarouselProps) {
                 src={src}
                 alt={`Banner ${idx}`}
                 width={800}
-                height={600}
+                height={700}
                 className="rounded-2xl object-cover w-full h-full shadow-xl"
               />
             </Link>
